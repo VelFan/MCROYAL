@@ -1,0 +1,42 @@
+# -- 'groups' - Не трогаем данное слово, оно указывает на то, что ниже будут идти группы и их permissions.
+# -- 'users (можно default)' - Название базовой группы, сюда как правило попадают все только что зашедшие на сервер игроки, если конечно
+groups:
+  users:
+    options:
+      prefix: '&2(Игрок) &a'
+      suffix: '&f:'
+      default: true
+    permissions:
+    - essentials.chat.shout
+    - -authme.player.unregister
+    - -authme.player.logout
+    - essentials.mute.notify
+    - essentials.kick.notify
+    - essentials.ban.notify
+    - essentials.msg
+  moderator:
+    options:
+      prefix: '&2(Модератор) &a'
+      suffix: '&f:'
+      default: false
+    inheritance:
+    - users
+    permissions:
+    - essentials.tempban
+    - essentials.tempban.offline
+    - essentials.mute
+    - essentials.mute.offline
+    - essentials.chat.spy
+    - essentials.tp
+    - essentials.whois
+    - essentials.seen
+    - essentials.kick
+  admin:
+    options:
+      prefix: '&4(Основатель) &a'
+      suffix: '&f:'
+      default: false
+    permissions:
+    - '*'
+
+schema-version: 1
